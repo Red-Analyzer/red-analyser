@@ -8,6 +8,7 @@
 
 import UIKit
 import ChameleonFramework
+import AFNetworking
 
 extension UIImage {
     class func imageWithColor(color: UIColor) -> UIImage {
@@ -66,6 +67,18 @@ class WarningController: UITableViewController {
         super.view.backgroundColor = UIColor(red: (81/255.0), green: (166/255.0), blue: (220/255.0), alpha: 1)
         
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        let manager = AFHTTPRequestOperationManager()
+        manager.requestSerializer.setAuthorizationHeaderFieldWithUsername("hackathon", password: "Hackathon2015")
+        
+        manager.GET( "http://145.128.2.100:8042/v1/search?options=all&format=json&pageLength=1&collection=KPNlora&q=F03D291000001146%20results:raw%20sort:time",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                print("JSON: " + responseObject.description)
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                print("Error: " + error.localizedDescription)
+        })
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -122,9 +122,6 @@ class ChartsTableViewController: UITableViewController {
         
         return data
     }
-    
-    
-
 
 
     /*
