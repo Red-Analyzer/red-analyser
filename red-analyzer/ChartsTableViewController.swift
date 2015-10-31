@@ -42,7 +42,7 @@ class ChartsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifierLabel", forIndexPath: indexPath)
 
-        var chartView: PieChartView = cell.contentView.viewWithTag(99) as! PieChartView
+        let chartView: PieChartView = cell.contentView.viewWithTag(99) as! PieChartView
         
         self.title = "Generated Charts";
         
@@ -92,11 +92,11 @@ class ChartsTableViewController: UITableViewController {
         
         
         var dataSet : [ChartDataSet] = []
-        dataSet.append(PieChartDataSet(yVals: yVals1, label: "Results"))
-//        dataSet.sliceSpace = 2.0
-        
-        // add a lot of colors
-        
+        let dataPie = PieChartDataSet(yVals: yVals1, label: "Results")
+        dataPie.sliceSpace = 2.0
+        dataSet.append(dataPie)
+
+
         var colors : [UIColor] = []
         
         colors.appendContentsOf(ChartColorTemplates.vordiplom())
@@ -112,11 +112,11 @@ class ChartsTableViewController: UITableViewController {
         
         let data = PieChartData(xVals: xVals, dataSets: dataSet)
         
-        var pFormatter: NSNumberFormatter = NSNumberFormatter()
-            pFormatter.numberStyle = NSNumberFormatterStyle.PercentStyle
-            pFormatter.maximumFractionDigits = 1
-            pFormatter.multiplier = 1.0
-            pFormatter.percentSymbol = " %"
+        let pFormatter: NSNumberFormatter = NSNumberFormatter()
+        pFormatter.numberStyle = NSNumberFormatterStyle.PercentStyle
+        pFormatter.maximumFractionDigits = 1
+        pFormatter.multiplier = 1.0
+        pFormatter.percentSymbol = " %"
         data.setValueFormatter(pFormatter)
         
         data.setValueTextColor(UIColor.blackColor())
