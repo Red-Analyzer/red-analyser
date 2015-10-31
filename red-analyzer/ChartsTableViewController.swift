@@ -42,6 +42,8 @@ class ChartsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifierLabel", forIndexPath: indexPath)
 
+        let chart: PieChartView = cell.contentView.viewWithTag(99) as! PieChartView
+        
         // cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
 
         return cell
