@@ -112,14 +112,15 @@ class ChartsTableViewController: UITableViewController {
         let data = PieChartData(xVals: xVals, dataSets: dataSet)
         
         var pFormatter: NSNumberFormatter = NSNumberFormatter()
-        //    pFormatter.numberStyle = NSNumberFormatterPercentStyle;
-        //    pFormatter.maximumFractionDigits = 1;
-        //    pFormatter.multiplier = @1.f;
-        //    pFormatter.percentSymbol = @" %";
-        //    [data setValueFormatter:pFormatter];
-        //    [data setValueFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:11.f]];
-        //    [data setValueTextColor:UIColor.whiteColor];
-        //
+            pFormatter.numberStyle = NSNumberFormatterStyle.PercentStyle
+            pFormatter.maximumFractionDigits = 1
+            pFormatter.multiplier = 1.0
+            pFormatter.percentSymbol = " %"
+        data.setValueFormatter(pFormatter)
+        
+        data.setValueTextColor(UIColor.blackColor())
+        
+
         //    [_chartView highlightValues:nil];
         
         return data
