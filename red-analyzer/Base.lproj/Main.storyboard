@@ -91,21 +91,21 @@
         <scene sceneID="HO2-Ok-Bkh">
             <objects>
                 <tableViewController id="Aw4-aj-Sp0" customClass="ChartsTableViewController" customModule="red_analyzer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="210" sectionHeaderHeight="28" sectionFooterHeight="28" id="gAA-99-7wW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="260" sectionHeaderHeight="28" sectionFooterHeight="28" id="gAA-99-7wW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="reuseIdentifierLabel" id="CxI-J9-Bd0">
-                                <rect key="frame" x="0.0" y="92" width="600" height="210"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="260"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CxI-J9-Bd0" id="tbQ-MC-hob">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="209.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="259.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view userInteractionEnabled="NO" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgj-km-A6X" customClass="PieChartView" customModule="Charts">
-                                            <rect key="frame" x="18" y="5" width="200" height="200"/>
+                                            <rect key="frame" x="200" y="41.5" width="200" height="200"/>
                                             <animations/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -113,12 +113,29 @@
                                                 <constraint firstAttribute="height" constant="200" id="H1a-Qf-hXd"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="98" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7B-Lt-1Co">
+                                            <rect key="frame" x="279" y="10" width="42" height="20.5"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
                                         <constraint firstItem="xgj-km-A6X" firstAttribute="leading" secondItem="tbQ-MC-hob" secondAttribute="leadingMargin" constant="10" id="8YW-kB-t2G"/>
+                                        <constraint firstItem="F7B-Lt-1Co" firstAttribute="centerX" secondItem="tbQ-MC-hob" secondAttribute="centerX" id="AAP-ay-uRd"/>
+                                        <constraint firstItem="xgj-km-A6X" firstAttribute="centerX" secondItem="tbQ-MC-hob" secondAttribute="centerX" id="lSE-RE-ycH"/>
                                         <constraint firstItem="xgj-km-A6X" firstAttribute="centerY" secondItem="tbQ-MC-hob" secondAttribute="centerY" id="nti-Tz-F8r"/>
+                                        <constraint firstItem="F7B-Lt-1Co" firstAttribute="top" secondItem="tbQ-MC-hob" secondAttribute="top" constant="10" id="wSz-5Q-7fc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xgj-km-A6X" secondAttribute="bottom" constant="10" id="ycs-ZC-FHy"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="8YW-kB-t2G"/>
+                                            <exclude reference="nti-Tz-F8r"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>

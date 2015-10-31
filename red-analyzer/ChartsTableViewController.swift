@@ -55,7 +55,7 @@ class ChartsTableViewController: UITableViewController {
         
         chartView.rotationAngle = 0.0
         chartView.data = self.setDataCount(4, range: Double(4))
-        
+        chartView.userInteractionEnabled
         
 //        var l = chartView.legend
 //        l.position = ChartLegendPosition.RightOfChart
