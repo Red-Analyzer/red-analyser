@@ -15,6 +15,7 @@
 		43FE02931BE4D3C10081DB78 /* red_analyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE02921BE4D3C10081DB78 /* red_analyzerTests.swift */; };
 		43FE029E1BE4D3C10081DB78 /* red_analyzerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE029D1BE4D3C10081DB78 /* red_analyzerUITests.swift */; };
 		BFA342D1FF19BF540CF156C3 /* Pods_red_analyzer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449ED4A0BC6C31B82CC8A05C /* Pods_red_analyzer.framework */; };
+		F2C34C831BE500AB008A1270 /* WarningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C34C821BE500AB008A1270 /* WarningController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		43FE029F1BE4D3C10081DB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449ED4A0BC6C31B82CC8A05C /* Pods_red_analyzer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_red_analyzer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9698B110A67A5E67DB643411 /* Pods-red-analyzer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-red-analyzer.release.xcconfig"; path = "Pods/Target Support Files/Pods-red-analyzer/Pods-red-analyzer.release.xcconfig"; sourceTree = "<group>"; };
+		F2C34C821BE500AB008A1270 /* WarningController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		43FE027C1BE4D3C10081DB78 /* red-analyzer */ = {
 			isa = PBXGroup;
 			children = (
+				F2C34C811BE50080008A1270 /* Controller */,
 				43FE027D1BE4D3C10081DB78 /* AppDelegate.swift */,
 				43FE027F1BE4D3C10081DB78 /* ViewController.swift */,
 				43FE02811BE4D3C10081DB78 /* Main.storyboard */,
@@ -147,6 +150,14 @@
 				449ED4A0BC6C31B82CC8A05C /* Pods_red_analyzer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2C34C811BE50080008A1270 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F2C34C821BE500AB008A1270 /* WarningController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 				TargetAttributes = {
 					43FE02791BE4D3C10081DB78 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 3WGY86CP9S;
 					};
 					43FE028D1BE4D3C10081DB78 = {
 						CreatedOnToolsVersion = 7.1;
@@ -332,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43FE02801BE4D3C10081DB78 /* ViewController.swift in Sources */,
+				F2C34C831BE500AB008A1270 /* WarningController.swift in Sources */,
 				43FE027E1BE4D3C10081DB78 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,10 +488,14 @@
 			baseConfigurationReference = 1D8FC9548524CE2371327A44 /* Pods-red-analyzer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "red-analyzer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "milvum.com.red-analyzer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -487,10 +504,14 @@
 			baseConfigurationReference = 9698B110A67A5E67DB643411 /* Pods-red-analyzer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "red-analyzer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "milvum.com.red-analyzer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -84,8 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-red-analyzer/ChameleonFramework.framework"
   install_framework "Pods-red-analyzer/Charts.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-red-analyzer/ChameleonFramework.framework"
   install_framework "Pods-red-analyzer/Charts.framework"
 fi
