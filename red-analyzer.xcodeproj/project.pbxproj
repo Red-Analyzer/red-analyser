@@ -14,6 +14,7 @@
 		43FE02881BE4D3C10081DB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43FE02861BE4D3C10081DB78 /* LaunchScreen.storyboard */; };
 		43FE02931BE4D3C10081DB78 /* red_analyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE02921BE4D3C10081DB78 /* red_analyzerTests.swift */; };
 		43FE029E1BE4D3C10081DB78 /* red_analyzerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE029D1BE4D3C10081DB78 /* red_analyzerUITests.swift */; };
+		43FE02AD1BE5013F0081DB78 /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE02AC1BE5013F0081DB78 /* ChartsTableViewController.swift */; };
 		BFA342D1FF19BF540CF156C3 /* Pods_red_analyzer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449ED4A0BC6C31B82CC8A05C /* Pods_red_analyzer.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		43FE02991BE4D3C10081DB78 /* red-analyzerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "red-analyzerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FE029D1BE4D3C10081DB78 /* red_analyzerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = red_analyzerUITests.swift; sourceTree = "<group>"; };
 		43FE029F1BE4D3C10081DB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43FE02AC1BE5013F0081DB78 /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
 		449ED4A0BC6C31B82CC8A05C /* Pods_red_analyzer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_red_analyzer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9698B110A67A5E67DB643411 /* Pods-red-analyzer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-red-analyzer.release.xcconfig"; path = "Pods/Target Support Files/Pods-red-analyzer/Pods-red-analyzer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 			children = (
 				43FE027D1BE4D3C10081DB78 /* AppDelegate.swift */,
 				43FE027F1BE4D3C10081DB78 /* ViewController.swift */,
+				43FE02AC1BE5013F0081DB78 /* ChartsTableViewController.swift */,
 				43FE02811BE4D3C10081DB78 /* Main.storyboard */,
 				43FE02841BE4D3C10081DB78 /* Assets.xcassets */,
 				43FE02861BE4D3C10081DB78 /* LaunchScreen.storyboard */,
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43FE02801BE4D3C10081DB78 /* ViewController.swift in Sources */,
+				43FE02AD1BE5013F0081DB78 /* ChartsTableViewController.swift in Sources */,
 				43FE027E1BE4D3C10081DB78 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
