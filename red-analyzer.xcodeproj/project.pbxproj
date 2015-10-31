@@ -53,6 +53,7 @@
 		43FE029D1BE4D3C10081DB78 /* red_analyzerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = red_analyzerUITests.swift; sourceTree = "<group>"; };
 		43FE029F1BE4D3C10081DB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43FE02B31BE515190081DB78 /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartsTableViewController.swift; path = ../ChartsTableViewController.swift; sourceTree = "<group>"; };
+		43FE02BA1BE552070081DB78 /* red-analyzer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "red-analyzer-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		449ED4A0BC6C31B82CC8A05C /* Pods_red_analyzer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_red_analyzer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9698B110A67A5E67DB643411 /* Pods-red-analyzer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-red-analyzer.release.xcconfig"; path = "Pods/Target Support Files/Pods-red-analyzer/Pods-red-analyzer.release.xcconfig"; sourceTree = "<group>"; };
 		F2C34C821BE500AB008A1270 /* WarningController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningController.swift; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		43FE027C1BE4D3C10081DB78 /* red-analyzer */ = {
 			isa = PBXGroup;
 			children = (
+				43FE02BA1BE552070081DB78 /* red-analyzer-Bridging-Header.h */,
 				43FE027D1BE4D3C10081DB78 /* AppDelegate.swift */,
 				F2C34C811BE50080008A1270 /* Controller */,
 				43FE02811BE4D3C10081DB78 /* Main.storyboard */,
@@ -496,14 +498,18 @@
 			baseConfigurationReference = 1D8FC9548524CE2371327A44 /* Pods-red-analyzer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "red-analyzer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "milvum.com.red-analyzer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "red-analyzer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -512,14 +518,17 @@
 			baseConfigurationReference = 9698B110A67A5E67DB643411 /* Pods-red-analyzer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "red-analyzer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "milvum.com.red-analyzer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "red-analyzer-Bridging-Header.h";
 			};
 			name = Release;
 		};
