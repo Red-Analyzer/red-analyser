@@ -91,13 +91,15 @@
         <scene sceneID="HO2-Ok-Bkh">
             <objects>
                 <tableViewController title="Generated Charts" id="Aw4-aj-Sp0" customClass="ChartsTableViewController" customModule="red_analyzer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="260" sectionHeaderHeight="28" sectionFooterHeight="28" id="gAA-99-7wW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="260" sectionHeaderHeight="28" sectionFooterHeight="28" id="gAA-99-7wW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.0" green="0.2666666667" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="reuseIdentifierLabel" id="CxI-J9-Bd0">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="reuseIdentifierLabel" id="CxI-J9-Bd0">
                                 <rect key="frame" x="0.0" y="92" width="600" height="260"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CxI-J9-Bd0" id="tbQ-MC-hob">
@@ -105,13 +107,18 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view userInteractionEnabled="NO" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgj-km-A6X" customClass="PieChartView" customModule="Charts">
-                                            <rect key="frame" x="200" y="41.5" width="200" height="200"/>
+                                            <rect key="frame" x="18" y="41.5" width="564" height="200"/>
                                             <animations/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="AoQ-b5-2jU"/>
                                                 <constraint firstAttribute="height" constant="200" id="H1a-Qf-hXd"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="AoQ-b5-2jU"/>
+                                                </mask>
+                                            </variation>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="98" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7B-Lt-1Co">
                                             <rect key="frame" x="279" y="10" width="42" height="20.5"/>
@@ -127,6 +134,8 @@
                                         <constraint firstItem="F7B-Lt-1Co" firstAttribute="centerX" secondItem="tbQ-MC-hob" secondAttribute="centerX" id="AAP-ay-uRd"/>
                                         <constraint firstItem="xgj-km-A6X" firstAttribute="centerX" secondItem="tbQ-MC-hob" secondAttribute="centerX" id="lSE-RE-ycH"/>
                                         <constraint firstItem="xgj-km-A6X" firstAttribute="centerY" secondItem="tbQ-MC-hob" secondAttribute="centerY" id="nti-Tz-F8r"/>
+                                        <constraint firstItem="xgj-km-A6X" firstAttribute="leading" secondItem="tbQ-MC-hob" secondAttribute="leadingMargin" constant="10" id="sAB-0m-lb6"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="xgj-km-A6X" secondAttribute="trailing" constant="10" id="udU-53-rTl"/>
                                         <constraint firstItem="F7B-Lt-1Co" firstAttribute="top" secondItem="tbQ-MC-hob" secondAttribute="top" constant="10" id="wSz-5Q-7fc"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="xgj-km-A6X" secondAttribute="bottom" constant="10" id="ycs-ZC-FHy"/>
                                     </constraints>

@@ -60,10 +60,12 @@ class ChartsTableViewController: UITableViewController {
     
     let data = [MockChartData(name: "Access to Water", xVals: ["<1km", "<2km", "<5km", "+5km"], yVals: [25, 35, 10, 30]),
         MockChartData(name: "Clean Water Education", xVals: ["Yes", "No"], yVals: [65, 35]),
-        MockChartData(name: "Data 3", xVals: ["A", "B", "C", "D", "E", "F"], yVals: [16, 16, 16, 16, 16, 20])]
+        MockChartData(name: "Making Water Safe", xVals: ["Boil", "Cloth", "Solar", "Chlorine", "Settle", "Other"], yVals: [16, 16, 16, 16, 16, 20])]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        super.view.backgroundColor = UIColor(red: (81/255.0), green: (166/255.0), blue: (220/255.0), alpha: 1)
     }
 
     // MARK: - Table view data source
