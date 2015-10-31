@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Charts
 
 class ChartsTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

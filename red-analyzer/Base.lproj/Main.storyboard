@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Charts Table View Controller-->
@@ -14,13 +15,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifierLabel" id="U5D-xf-B9E">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifierLabel" id="U5D-xf-B9E" customClass="ChartsUITableViewCell" customModule="red_analyzer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U5D-xf-B9E" id="963-te-MxS">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-nS-oud" customClass="PieChartView" customModule="Charts">
+                                            <rect key="frame" x="8" y="8" width="584" height="27.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Veh-nS-oud" secondAttribute="bottom" id="I9Z-TO-ISd"/>
+                                        <constraint firstItem="Veh-nS-oud" firstAttribute="leading" secondItem="963-te-MxS" secondAttribute="leadingMargin" id="KyC-si-K8u"/>
+                                        <constraint firstItem="Veh-nS-oud" firstAttribute="top" secondItem="963-te-MxS" secondAttribute="topMargin" id="apR-zC-yQ9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Veh-nS-oud" secondAttribute="trailing" id="p4I-Bm-2dg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pieChartView" destination="Veh-nS-oud" id="zTW-lB-RyX"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
