@@ -53,12 +53,14 @@ class Warning {
 
 class WarningController: UITableViewController {
     
-    let data = [Warning(severity: .Red, column: "Distance to water"),
-        Warning(severity: .Orange, column: "Clean water education"),
-        Warning(severity: .Yellow, column: "Hygenic facilities")]
+    let data = [Warning(severity: .Red, column: "Access to Water"),
+        Warning(severity: .Orange, column: "Clean Water Education"),
+        Warning(severity: .Yellow, column: "Making Water Safe")]
     
     let deviceData = [Warning(severity: .Red, column: "Temperature at sanitaire is high"),
         Warning(severity: .Green, column: "Temperature at tents is OK")]
+    
+    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,10 +77,10 @@ class WarningController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0
         {
-            return "Warnings from collected data"
+            return "Warnings from Collected Data"
         } else
         {
-            return "Warnings from LoRa devices"
+            return "Warnings from LoRa Devices"
         }
     }
     
@@ -105,5 +107,21 @@ class WarningController: UITableViewController {
         cell.textLabel?.text = "\(warning!.column)"
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            self.index = indexPath.row
+            self.performSegueWithIdentifier("chart", sender: self)
+        } else if indexPath.section == 1 {
+            print("Map")
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "chart" {
+            let dest = segue.destinationViewController as! ChartController
+            dest.index = self.index
+        }
     }
 }

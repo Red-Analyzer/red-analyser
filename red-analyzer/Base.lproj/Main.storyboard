@@ -6,20 +6,20 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="red_analyzer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="red_analyzer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeg-JE-iJc">
-                                <rect key="frame" x="0.0" y="264" width="600" height="71"/>
+                                <rect key="frame" x="0.0" y="232" width="600" height="71"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-so-2wo">
                                         <rect key="frame" x="10" y="0.0" width="248" height="71"/>
@@ -44,7 +44,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="Tev-4e-FQg">
-                                        <rect key="frame" x="268" y="3.5" width="64" height="64"/>
+                                        <rect key="frame" x="268" y="3" width="64" height="64"/>
                                         <animations/>
                                     </imageView>
                                 </subviews>
@@ -92,7 +92,7 @@
             <objects>
                 <tableViewController title="Generated Charts" id="Aw4-aj-Sp0" customClass="ChartsTableViewController" customModule="red_analyzer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="260" sectionHeaderHeight="28" sectionFooterHeight="28" id="gAA-99-7wW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,7 +100,7 @@
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="reuseIdentifierLabel" id="CxI-J9-Bd0">
-                                <rect key="frame" x="0.0" y="92" width="600" height="260"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="260"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CxI-J9-Bd0" id="tbQ-MC-hob">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="259.5"/>
@@ -164,10 +164,11 @@
         <scene sceneID="WKe-cm-xtR">
             <objects>
                 <navigationController id="xM1-Fo-WMF" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vDe-hf-eej">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="vDe-hf-eej">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="barTintColor" red="0.78621655702590942" green="0.87629497051239014" blue="0.96106588840484619" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ryz-7x-dih"/>
@@ -181,21 +182,21 @@
         <scene sceneID="0q2-Da-ivq">
             <objects>
                 <tableViewController title="Warnings" id="erq-Un-hNV" customClass="WarningController" customModule="red_analyzer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jhq-uc-5YL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jhq-uc-5YL">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="warning" textLabel="dYZ-r7-EUs" style="IBUITableViewCellStyleDefault" id="UnE-J5-z8T">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="warning" textLabel="dYZ-r7-EUs" style="IBUITableViewCellStyleDefault" id="UnE-J5-z8T">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UnE-J5-z8T" id="kBB-SE-xQN">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dYZ-r7-EUs">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="550" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -214,10 +215,57 @@
                             <outlet property="delegate" destination="erq-Un-hNV" id="Xbn-9g-Ftb"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="VBc-ux-6Du" kind="show" identifier="chart" id="bDr-JY-cDH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KcN-sz-LVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="531" y="544"/>
+        </scene>
+        <!--Chart Controller-->
+        <scene sceneID="SHK-Bt-xIP">
+            <objects>
+                <viewController id="VBc-ux-6Du" customClass="ChartController" customModule="red_analyzer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eG7-oh-Q4o"/>
+                        <viewControllerLayoutGuide type="bottom" id="vTb-UB-NOC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eWM-Sc-CYE">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFJ-gw-MsO" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="118" width="560" height="300"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="QBu-Ze-THh"/>
+                                    <constraint firstAttribute="width" constant="300" id="nJ9-NQ-PT3"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="nJ9-NQ-PT3"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HFJ-gw-MsO" firstAttribute="centerX" secondItem="eWM-Sc-CYE" secondAttribute="centerX" id="4VK-5A-bpP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HFJ-gw-MsO" secondAttribute="trailing" id="Bsh-hY-tZ8"/>
+                            <constraint firstItem="HFJ-gw-MsO" firstAttribute="leading" secondItem="eWM-Sc-CYE" secondAttribute="leadingMargin" id="Zxp-O6-VIn"/>
+                            <constraint firstItem="HFJ-gw-MsO" firstAttribute="centerY" secondItem="eWM-Sc-CYE" secondAttribute="centerY" id="uzD-wl-U4u"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chart" destination="HFJ-gw-MsO" id="3qB-sn-SoH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BC8-YI-OWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1309" y="544"/>
         </scene>
     </scenes>
     <resources>
