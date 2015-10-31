@@ -54,10 +54,9 @@ class Warning {
 }
 
 class WarningController: UITableViewController {
+    
     var lattitude :Double?
     var longtitude :Double?
-    
-    
     
     let data = [Warning(severity: .Red, column: "Access to Water"),
         Warning(severity: .Orange, column: "Clean Water Education"),
@@ -140,7 +139,7 @@ class WarningController: UITableViewController {
             self.index = indexPath.row
             self.performSegueWithIdentifier("chart", sender: self)
         } else if indexPath.section == 1 {
-            print("Map")
+            self.performSegueWithIdentifier("map", sender: self)
         }
     }
     
@@ -148,6 +147,10 @@ class WarningController: UITableViewController {
         if segue.identifier == "chart" {
             let dest = segue.destinationViewController as! ChartController
             dest.index = self.index
+        } else if segue.identifier == "map" {
+            let dest = segue.destinationViewController as! MapViewController
+            dest.longtitude = longtitude
+            dest.lattitude = lattitude
         }
     }
 }
