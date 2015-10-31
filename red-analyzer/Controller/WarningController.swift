@@ -53,12 +53,12 @@ class Warning {
 
 class WarningController: UITableViewController {
     
-    let data = [Warning(severity: .Red, column: "Distance to Water"),
-        Warning(severity: .Orange, column: "Clean Water Education"),
-        Warning(severity: .Yellow, column: "Hygenic Facilities")]
+    let data = [Warning(severity: .Red, column: "Distance to water"),
+        Warning(severity: .Orange, column: "Clean water education"),
+        Warning(severity: .Yellow, column: "Hygenic facilities")]
     
-    let deviceData = [Warning(severity: .Green, column: "Temperature at tents is OK"),
-        Warning(severity: .Red, column: "Temperature at sanitaire is high")]
+    let deviceData = [Warning(severity: .Red, column: "Temperature at sanitaire is high"),
+        Warning(severity: .Green, column: "Temperature at tents is OK")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
