@@ -13,6 +13,7 @@ class ChartsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Generated Charts";
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,8 +44,6 @@ class ChartsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifierLabel", forIndexPath: indexPath)
 
         let chartView: PieChartView = cell.contentView.viewWithTag(99) as! PieChartView
-        
-        self.title = "Generated Charts";
         
         chartView.usePercentValuesEnabled = true
         chartView.holeTransparent = true;
