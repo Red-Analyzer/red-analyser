@@ -40,7 +40,7 @@
 		1D8FC9548524CE2371327A44 /* Pods-red-analyzer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-red-analyzer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-red-analyzer/Pods-red-analyzer.debug.xcconfig"; sourceTree = "<group>"; };
 		43FE027A1BE4D3C10081DB78 /* red-analyzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "red-analyzer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FE027D1BE4D3C10081DB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43FE027F1BE4D3C10081DB78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		43FE027F1BE4D3C10081DB78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		43FE02821BE4D3C10081DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43FE02841BE4D3C10081DB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43FE02871BE4D3C10081DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		43FE02991BE4D3C10081DB78 /* red-analyzerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "red-analyzerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FE029D1BE4D3C10081DB78 /* red_analyzerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = red_analyzerUITests.swift; sourceTree = "<group>"; };
 		43FE029F1BE4D3C10081DB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43FE02B31BE515190081DB78 /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
+		43FE02B31BE515190081DB78 /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartsTableViewController.swift; path = ../ChartsTableViewController.swift; sourceTree = "<group>"; };
 		449ED4A0BC6C31B82CC8A05C /* Pods_red_analyzer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_red_analyzer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9698B110A67A5E67DB643411 /* Pods-red-analyzer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-red-analyzer.release.xcconfig"; path = "Pods/Target Support Files/Pods-red-analyzer/Pods-red-analyzer.release.xcconfig"; sourceTree = "<group>"; };
 		F2C34C821BE500AB008A1270 /* WarningController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningController.swift; sourceTree = "<group>"; };
@@ -108,10 +108,8 @@
 		43FE027C1BE4D3C10081DB78 /* red-analyzer */ = {
 			isa = PBXGroup;
 			children = (
-				F2C34C811BE50080008A1270 /* Controller */,
 				43FE027D1BE4D3C10081DB78 /* AppDelegate.swift */,
-				43FE027F1BE4D3C10081DB78 /* ViewController.swift */,
-				43FE02B31BE515190081DB78 /* ChartsTableViewController.swift */,
+				F2C34C811BE50080008A1270 /* Controller */,
 				43FE02811BE4D3C10081DB78 /* Main.storyboard */,
 				43FE02841BE4D3C10081DB78 /* Assets.xcassets */,
 				43FE02861BE4D3C10081DB78 /* LaunchScreen.storyboard */,
@@ -158,7 +156,9 @@
 		F2C34C811BE50080008A1270 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				43FE027F1BE4D3C10081DB78 /* ViewController.swift */,
 				F2C34C821BE500AB008A1270 /* WarningController.swift */,
+				43FE02B31BE515190081DB78 /* ChartsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
