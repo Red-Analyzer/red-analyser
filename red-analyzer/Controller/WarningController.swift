@@ -25,7 +25,7 @@ extension UIImage {
 }
 
 enum Severity {
-    case Yellow, Orange, Red
+    case Yellow, Orange, Red, Green
     
     static func image(severity: Severity) -> UIImage {
         switch(severity) {
@@ -35,6 +35,8 @@ enum Severity {
             return UIImage.imageWithColor(FlatOrange())
         case Red:
             return UIImage.imageWithColor(FlatRed())
+        case Green:
+            return UIImage.imageWithColor(FlatGreen())
         }
     }
 }
@@ -51,9 +53,12 @@ class Warning {
 
 class WarningController: UITableViewController {
     
-    let data = [Warning(severity: .Red, column: "Distance to Water"),
-        Warning(severity: .Orange, column: "Clean Water Education"),
-        Warning(severity: .Yellow, column: "Hygenic Facilities")]
+    let data = [Warning(severity: .Red, column: "Distance to water"),
+        Warning(severity: .Orange, column: "Clean water education"),
+        Warning(severity: .Yellow, column: "Hygenic facilities")]
+    
+    let deviceData = [Warning(severity: .Red, column: "Temperature at sanitaire is high"),
+        Warning(severity: .Green, column: "Temperature at tents is OK")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,17 +68,41 @@ class WarningController: UITableViewController {
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
     }
     
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0
+        {
+            return "Warnings from collected data"
+        } else
+        {
+            return "Warnings from LoRa devices"
+        }
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        if section == 0
+        {
+            return data.count
+        } else {
+            return deviceData.count
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("warning", forIndexPath: indexPath)
         
-        let warning = data[indexPath.row]
+        var warning : Warning?
+        if indexPath.section == 0 {
+            warning = data[indexPath.row]
+        } else if indexPath.section == 1 {
+            warning = deviceData[indexPath.row]
+        }
         
-        cell.imageView?.image = Severity.image(warning.severity)
-        cell.textLabel?.text = "\(warning.column)"
+        cell.imageView?.image = Severity.image(warning!.severity)
+        cell.textLabel?.text = "\(warning!.column)"
         
         return cell
     }
