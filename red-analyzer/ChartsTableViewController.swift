@@ -51,10 +51,11 @@ class ChartsTableViewController: UITableViewController {
         chartView.holeRadiusPercent = 0.58;
         chartView.transparentCircleRadiusPercent = 0.61;
         chartView.descriptionText = "";
-//        chartView.setExtraOffsets(left: 5.f, top: 10.f, right: 5.f, bottom: 5.f)
+        chartView.setExtraOffsets(left: CGFloat(0.5), top: CGFloat(10.0), right: CGFloat(5.0), bottom: CGFloat(5.0))
         
         chartView.rotationAngle = 0.0
         chartView.data = self.setDataCount(4, range: Double(4))
+        chartView.highlightValues(nil)
         
         
 //        var l = chartView.legend
@@ -119,9 +120,6 @@ class ChartsTableViewController: UITableViewController {
         data.setValueFormatter(pFormatter)
         
         data.setValueTextColor(UIColor.blackColor())
-        
-
-        //    [_chartView highlightValues:nil];
         
         return data
     }
