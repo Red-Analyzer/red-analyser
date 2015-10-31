@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="-381" y="420"/>
         </scene>
-        <!--Charts Table View Controller-->
+        <!--Generated Charts-->
         <scene sceneID="HO2-Ok-Bkh">
             <objects>
-                <tableViewController id="Aw4-aj-Sp0" customClass="ChartsTableViewController" customModule="red_analyzer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Generated Charts" id="Aw4-aj-Sp0" customClass="ChartsTableViewController" customModule="red_analyzer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="260" sectionHeaderHeight="28" sectionFooterHeight="28" id="gAA-99-7wW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

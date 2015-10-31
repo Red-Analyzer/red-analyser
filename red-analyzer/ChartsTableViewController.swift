@@ -8,169 +8,95 @@
 
 import UIKit
 import Charts
+import ChameleonFramework
 
-class ChartsTableViewController: UITableViewController {
+class MockChartData {
+    let name: String
+    let xVals: [String]
+    let yVals: [Int]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 10
-    }
-
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifierLabel", forIndexPath: indexPath)
-
-        let chartView: PieChartView = cell.contentView.viewWithTag(99) as! PieChartView
-        
-        self.title = "Generated Charts";
-        
-        chartView.usePercentValuesEnabled = true
-        chartView.holeTransparent = true;
-        chartView.holeRadiusPercent = 0.58;
-        chartView.transparentCircleRadiusPercent = 0.61;
-        chartView.descriptionText = "";
-        chartView.setExtraOffsets(left: CGFloat(0.5), top: CGFloat(10.0), right: CGFloat(5.0), bottom: CGFloat(5.0))
-        
-        chartView.rotationAngle = 0.0
-        chartView.data = self.setDataCount(4, range: Double(4))
-        chartView.highlightValues(nil)
-        
-        
-//        var l = chartView.legend
-//        l.position = ChartLegendPosition.RightOfChart
-//        l.xEntrySpace = 7.0;
-//        l.yEntrySpace = 0.0;
-//        l.yOffset = 0.0;
-        
-//        [chartView animateWithXAxisDuration:1.4 yAxisDuration:1.4 easingOption:ChartEasingOptionEaseOutBack];
-
-
-        return cell
+    init(name: String, xVals: [String], yVals: [Int]) {
+        self.name = name
+        self.xVals = xVals
+        self.yVals = yVals
     }
     
-    func setDataCount(count:Int, range:Double) -> PieChartData
-    {
-        let mult = UInt32(range)
-        
-        var yVals1 : [ChartDataEntry] = []
-        
-        // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
-        for var i = 0; i < count; i++
-        {
-            let value = Double(arc4random_uniform(mult) + mult / 5)
-            yVals1.append(ChartDataEntry.init(value: value , xIndex: i))
-        }
-        
-        var xVals : [String?] = []
-        
-        for var i = 0; i < count; i++
-        {
-            xVals.append("Party A")
-        }
-        
+    func pieChart() -> PieChartData {
+        let pyVals = processYVals()
         
         var dataSet : [ChartDataSet] = []
-        let dataPie = PieChartDataSet(yVals: yVals1, label: "Results")
+        let dataPie = PieChartDataSet(yVals: pyVals, label: "")
         dataPie.sliceSpace = 2.0
+        dataPie.colors = [FlatRed(), FlatOrange(), FlatYellow(), FlatGreen(), FlatBlue(), FlatPurple()]
         dataSet.append(dataPie)
-
-
-        var colors : [UIColor] = []
         
-        colors.appendContentsOf(ChartColorTemplates.vordiplom())
-        colors.appendContentsOf(ChartColorTemplates.joyful())
-        colors.appendContentsOf(ChartColorTemplates.colorful())
-        colors.appendContentsOf(ChartColorTemplates.liberty())
-        colors.appendContentsOf(ChartColorTemplates.pastel())
-        
-        for dataInSet in dataSet
-        {
-            dataInSet.colors = colors
-        }
-        
-        let data = PieChartData(xVals: xVals, dataSets: dataSet)
+        let pieChartData = PieChartData(xVals: xVals, dataSets: dataSet)
         
         let pFormatter: NSNumberFormatter = NSNumberFormatter()
         pFormatter.numberStyle = NSNumberFormatterStyle.PercentStyle
         pFormatter.maximumFractionDigits = 1
         pFormatter.multiplier = 1.0
-        pFormatter.percentSymbol = " %"
-        data.setValueFormatter(pFormatter)
+        pFormatter.percentSymbol = "%"
+        pieChartData.setValueFormatter(pFormatter)
         
-        data.setValueTextColor(UIColor.blackColor())
+        pieChartData.setValueTextColor(UIColor.blackColor())
         
-        return data
+        return pieChartData
     }
     
+    private func processYVals() -> [ChartDataEntry] {
+        var pyVals: [ChartDataEntry] = []
+        
+        for i in 0 ..< xVals.count
+        {
+            pyVals.append(ChartDataEntry.init(value: Double(self.yVals[i]), xIndex: i))
+        }
+        
+        return pyVals
+    }
+}
+
+class ChartsTableViewController: UITableViewController {
     
-
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    let data = [MockChartData(name: "Access to Water", xVals: ["<1km", "<2km", "<5km", "+5km"], yVals: [25, 35, 10, 30]),
+        MockChartData(name: "Clean Water Education", xVals: ["Yes", "No"], yVals: [65, 35]),
+        MockChartData(name: "Data 3", xVals: ["A", "B", "C", "D", "E", "F"], yVals: [16, 16, 16, 16, 16, 20])]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    // MARK: - Table view data source
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
-    */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
     }
-    */
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifierLabel", forIndexPath: indexPath)
+
+        let dataChart = self.data[indexPath.row]
+        
+        let chartView: PieChartView = cell.contentView.viewWithTag(99) as! PieChartView
+        let titleView: UILabel = cell.contentView.viewWithTag(98) as! UILabel
+        
+        titleView.text = dataChart.name
+        
+        chartView.usePercentValuesEnabled = true
+        chartView.holeTransparent = true
+        chartView.holeRadiusPercent = 0.4
+        chartView.transparentCircleRadiusPercent = 0.4
+        chartView.descriptionText = ""
+        
+        chartView.rotationAngle = 0.0
+        chartView.data = dataChart.pieChart()
+        chartView.highlightValues(nil)
+        chartView.drawSliceTextEnabled = false
+
+        return cell
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
