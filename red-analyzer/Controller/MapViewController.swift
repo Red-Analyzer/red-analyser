@@ -25,8 +25,18 @@ class MapViewController: UIViewController {
         if let _ = longtitude {
             self.longtitude = 4.910287
         }
+        
+        let initialLocation = CLLocation(latitude: lattitude!, longitude: longtitude!)
+        centerMapOnLocation(initialLocation)
 
         // Do any additional setup after loading the view.
+    }
+    
+    let regionRadius: CLLocationDistance = 1000
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+            regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
