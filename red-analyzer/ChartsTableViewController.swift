@@ -42,12 +42,87 @@ class ChartsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifierLabel", forIndexPath: indexPath)
 
-        let chart: PieChartView = cell.contentView.viewWithTag(99) as! PieChartView
+        var chartView: PieChartView = cell.contentView.viewWithTag(99) as! PieChartView
         
-        // cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
+        self.title = "Generated Charts";
+        
+        chartView.usePercentValuesEnabled = true
+        chartView.holeTransparent = true;
+        chartView.holeRadiusPercent = 0.58;
+        chartView.transparentCircleRadiusPercent = 0.61;
+        chartView.descriptionText = "";
+//        chartView.setExtraOffsets(left: 5.f, top: 10.f, right: 5.f, bottom: 5.f)
+        
+        chartView.rotationAngle = 0.0
+        chartView.data = self.setDataCount(4, range: Double(4))
+        
+        
+//        var l = chartView.legend
+//        l.position = ChartLegendPosition.RightOfChart
+//        l.xEntrySpace = 7.0;
+//        l.yEntrySpace = 0.0;
+//        l.yOffset = 0.0;
+        
+//        [chartView animateWithXAxisDuration:1.4 yAxisDuration:1.4 easingOption:ChartEasingOptionEaseOutBack];
+
 
         return cell
     }
+    
+    func setDataCount(count:Int, range:Double) -> PieChartData
+    {
+        let mult = UInt32(range)
+        
+        var yVals1 : [ChartDataEntry] = []
+        
+        // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
+        for var i = 0; i < count; i++
+        {
+            let value = Double(arc4random_uniform(mult) + mult / 5)
+            yVals1.append(ChartDataEntry.init(value: value , xIndex: i))
+        }
+        
+        var xVals : [String?] = []
+        
+        for var i = 0; i < count; i++
+        {
+            xVals.append("Party A")
+        }
+        
+        
+        var dataSet : [ChartDataSet] = []
+        dataSet.append(PieChartDataSet(yVals: yVals1, label: "Results"))
+//        dataSet.sliceSpace = 2.0
+        
+        // add a lot of colors
+        
+        //        var colors : [UIColor]
+        //        colors.append(ChartColorTemplates.vordiplom)
+        //
+        //    [colors addObjectsFromArray:ChartColorTemplates.joyful];
+        //    [colors addObjectsFromArray:ChartColorTemplates.colorful];
+        //    [colors addObjectsFromArray:ChartColorTemplates.liberty];
+        //    [colors addObjectsFromArray:ChartColorTemplates.pastel];
+        //    [colors addObject:[UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f]];
+        //
+        //    dataSet.colors = colors;
+        
+        let data = PieChartData(xVals: xVals, dataSets: dataSet)
+        return data
+        //    NSNumberFormatter *pFormatter = [[NSNumberFormatter alloc] init];
+        //    pFormatter.numberStyle = NSNumberFormatterPercentStyle;
+        //    pFormatter.maximumFractionDigits = 1;
+        //    pFormatter.multiplier = @1.f;
+        //    pFormatter.percentSymbol = @" %";
+        //    [data setValueFormatter:pFormatter];
+        //    [data setValueFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:11.f]];
+        //    [data setValueTextColor:UIColor.whiteColor];
+        //
+        //    [_chartView highlightValues:nil];
+    }
+    
+    
+
 
 
     /*
