@@ -96,20 +96,22 @@ class ChartsTableViewController: UITableViewController {
         
         // add a lot of colors
         
-        //        var colors : [UIColor]
-        //        colors.append(ChartColorTemplates.vordiplom)
-        //
-        //    [colors addObjectsFromArray:ChartColorTemplates.joyful];
-        //    [colors addObjectsFromArray:ChartColorTemplates.colorful];
-        //    [colors addObjectsFromArray:ChartColorTemplates.liberty];
-        //    [colors addObjectsFromArray:ChartColorTemplates.pastel];
-        //    [colors addObject:[UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f]];
-        //
-        //    dataSet.colors = colors;
+        var colors : [UIColor] = []
+        
+        colors.appendContentsOf(ChartColorTemplates.vordiplom())
+        colors.appendContentsOf(ChartColorTemplates.joyful())
+        colors.appendContentsOf(ChartColorTemplates.colorful())
+        colors.appendContentsOf(ChartColorTemplates.liberty())
+        colors.appendContentsOf(ChartColorTemplates.pastel())
+        
+        for dataInSet in dataSet
+        {
+            dataInSet.colors = colors
+        }
         
         let data = PieChartData(xVals: xVals, dataSets: dataSet)
-        return data
-        //    NSNumberFormatter *pFormatter = [[NSNumberFormatter alloc] init];
+        
+        var pFormatter: NSNumberFormatter = NSNumberFormatter()
         //    pFormatter.numberStyle = NSNumberFormatterPercentStyle;
         //    pFormatter.maximumFractionDigits = 1;
         //    pFormatter.multiplier = @1.f;
@@ -119,6 +121,8 @@ class ChartsTableViewController: UITableViewController {
         //    [data setValueTextColor:UIColor.whiteColor];
         //
         //    [_chartView highlightValues:nil];
+        
+        return data
     }
     
     
