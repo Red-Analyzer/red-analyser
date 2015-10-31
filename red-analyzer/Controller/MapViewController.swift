@@ -29,6 +29,10 @@ class MapViewController: UIViewController {
         let initialLocation = CLLocation(latitude: lattitude!, longitude: longtitude!)
         centerMapOnLocation(initialLocation)
 
+        let dropPin = MKPointAnnotation()
+        dropPin.coordinate = CLLocationCoordinate2DMake(lattitude!, longtitude!)
+        mapView.addAnnotation(dropPin)
+        
         // Do any additional setup after loading the view.
     }
     
