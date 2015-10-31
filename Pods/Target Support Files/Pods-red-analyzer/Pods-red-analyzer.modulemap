@@ -1,0 +1,6 @@
+framework module Pods_red_analyzer {
+  umbrella header "Pods-red-analyzer-umbrella.h"
+
+  export *
+  module * { export * }
+}
