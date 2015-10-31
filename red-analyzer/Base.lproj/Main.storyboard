@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Home-->
@@ -17,43 +18,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-so-2wo">
-                                <rect key="frame" x="261.5" y="214" width="77" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeg-JE-iJc">
+                                <rect key="frame" x="0.0" y="264" width="600" height="71"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-so-2wo">
+                                        <rect key="frame" x="10" y="0.0" width="248" height="71"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.0" green="0.2666666667" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="  Visualize  ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Aw4-aj-Sp0" kind="show" id="QFl-YH-6v6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6r-WQ-Kkz">
+                                        <rect key="frame" x="342" y="0.0" width="248" height="71"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.0" green="0.2666666667" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="  Warnings  ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="erq-Un-hNV" kind="show" id="Us3-Q1-uIt"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="Tev-4e-FQg">
+                                        <rect key="frame" x="268" y="3.5" width="64" height="64"/>
+                                        <animations/>
+                                    </imageView>
+                                </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.2666666667" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="  Visualize  ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Aw4-aj-Sp0" kind="show" id="QFl-YH-6v6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6r-WQ-Kkz">
-                                <rect key="frame" x="259.5" y="281" width="81" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.2666666667" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="  Warnings  ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="erq-Un-hNV" kind="show" id="Us3-Q1-uIt"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" red="0.0" green="0.26666666666666666" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Tev-4e-FQg" firstAttribute="centerX" secondItem="yeg-JE-iJc" secondAttribute="centerX" id="9XC-za-TcZ"/>
+                                    <constraint firstItem="Tev-4e-FQg" firstAttribute="leading" secondItem="QOQ-so-2wo" secondAttribute="trailing" constant="10" id="GaE-jn-Jub"/>
+                                    <constraint firstItem="Tev-4e-FQg" firstAttribute="centerY" secondItem="yeg-JE-iJc" secondAttribute="centerY" id="MTT-Sy-AtF"/>
+                                    <constraint firstItem="QOQ-so-2wo" firstAttribute="top" secondItem="yeg-JE-iJc" secondAttribute="top" id="OAK-82-KeW"/>
+                                    <constraint firstAttribute="bottom" secondItem="QOQ-so-2wo" secondAttribute="bottom" id="S0z-wE-6OU"/>
+                                    <constraint firstAttribute="bottom" secondItem="R6r-WQ-Kkz" secondAttribute="bottom" id="WOv-Ym-VoO"/>
+                                    <constraint firstItem="QOQ-so-2wo" firstAttribute="leading" secondItem="yeg-JE-iJc" secondAttribute="leading" constant="10" id="Zov-hr-msF"/>
+                                    <constraint firstItem="R6r-WQ-Kkz" firstAttribute="top" secondItem="yeg-JE-iJc" secondAttribute="top" id="ewl-Cn-9wp"/>
+                                    <constraint firstItem="Tev-4e-FQg" firstAttribute="height" secondItem="yeg-JE-iJc" secondAttribute="height" multiplier="0.9" id="fyP-L3-Tq1"/>
+                                    <constraint firstAttribute="trailing" secondItem="R6r-WQ-Kkz" secondAttribute="trailing" constant="10" id="qyw-vT-qfM"/>
+                                    <constraint firstItem="R6r-WQ-Kkz" firstAttribute="leading" secondItem="QOQ-so-2wo" secondAttribute="trailing" constant="10" id="t6A-Tt-OWQ"/>
+                                    <constraint firstAttribute="height" constant="150" id="tSJ-M6-1mP"/>
+                                    <constraint firstItem="R6r-WQ-Kkz" firstAttribute="leading" secondItem="Tev-4e-FQg" secondAttribute="trailing" constant="10" id="xtH-RH-VEb"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="tSJ-M6-1mP"/>
+                                        <exclude reference="t6A-Tt-OWQ"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.31764705879999999" green="0.65098039220000004" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="QOQ-so-2wo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="D0g-7x-fTW"/>
-                            <constraint firstItem="R6r-WQ-Kkz" firstAttribute="top" secondItem="QOQ-so-2wo" secondAttribute="bottom" constant="37" id="TYv-4P-Qvc"/>
-                            <constraint firstItem="R6r-WQ-Kkz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qhn-eI-q5K"/>
-                            <constraint firstItem="QOQ-so-2wo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vQF-BZ-naP"/>
+                            <constraint firstAttribute="trailing" secondItem="yeg-JE-iJc" secondAttribute="trailing" id="HQP-nf-emo"/>
+                            <constraint firstItem="yeg-JE-iJc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bx4-bG-aMd"/>
+                            <constraint firstItem="yeg-JE-iJc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zex-qj-cx9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wwX-5B-EMr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-325" y="426"/>
+            <point key="canvasLocation" x="-381" y="420"/>
         </scene>
         <!--Charts Table View Controller-->
         <scene sceneID="HO2-Ok-Bkh">
@@ -115,7 +147,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIB-YD-6Pi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-325" y="-343"/>
+            <point key="canvasLocation" x="-381" y="-343"/>
         </scene>
         <!--Warnings-->
         <scene sceneID="0q2-Da-ivq">
@@ -160,4 +192,7 @@
             <point key="canvasLocation" x="531" y="544"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cross" width="64" height="64"/>
+    </resources>
 </document>
