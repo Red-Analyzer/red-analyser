@@ -9,6 +9,7 @@
 import UIKit
 import ChameleonFramework
 import AFNetworking
+import SwiftyJSON
 
 extension UIImage {
     class func imageWithColor(color: UIColor) -> UIImage {
@@ -53,6 +54,10 @@ class Warning {
 }
 
 class WarningController: UITableViewController {
+    var lattitude :Double?
+    var longtitude :Double?
+    
+    
     
     let data = [Warning(severity: .Red, column: "Distance to water"),
         Warning(severity: .Orange, column: "Clean water education"),
@@ -75,10 +80,18 @@ class WarningController: UITableViewController {
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 print("JSON: " + responseObject.description)
+                let json = JSON(responseObject)
+                if let lat = json["results"][0]["content"]["DevEUI_uplink"]["LrrLAT"].string {
+                    self.lattitude = Double(lat)
+                }
+                if let lon = json["results"][0]["content"]["DevEUI_uplink"]["LrrLON"].string {
+                    self.longtitude = Double(lon)
+                }
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 print("Error: " + error.localizedDescription)
         })
+        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

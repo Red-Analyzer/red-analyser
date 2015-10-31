@@ -87,9 +87,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-red-analyzer/AFNetworking.framework"
   install_framework "Pods-red-analyzer/ChameleonFramework.framework"
   install_framework "Pods-red-analyzer/Charts.framework"
+  install_framework "Pods-red-analyzer/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-red-analyzer/AFNetworking.framework"
   install_framework "Pods-red-analyzer/ChameleonFramework.framework"
   install_framework "Pods-red-analyzer/Charts.framework"
+  install_framework "Pods-red-analyzer/SwiftyJSON.framework"
 fi
