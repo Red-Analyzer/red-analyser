@@ -17,12 +17,12 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let _ = lattitude {
+                
+        if (lattitude == nil) {
             self.lattitude = 52.371567
         }
         
-        if let _ = longtitude {
+        if (longtitude == nil) {
             self.longtitude = 4.910287
         }
         
